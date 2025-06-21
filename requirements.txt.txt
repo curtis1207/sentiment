@@ -1,0 +1,8 @@
+transformers
+datasets
+scikit-learn
+torch # Ou tensorflow si vous préférez, mais transformers est souvent plus simple avec PyTorch
+huggingface_hub
+accelerate # Recommandé pour l'entraînement avec transformers
+email-validator # Pour les notifications par mail
+smtplib # Pour les notifications par mail
