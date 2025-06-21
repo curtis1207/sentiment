@@ -47,18 +47,19 @@ if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
 training_args = TrainingArguments(
-    output_dir=output_dir,
-    eval_strategy="epoch",
-    learning_rate=2e-5,
-    per_device_train_batch_size=8,
-    per_device_eval_batch_size=8,
-    num_train_epochs=3,
-    weight_decay=0.01,
-    save_total_limit=1, # Ne conserver qu'un seul checkpoint
-    load_best_model_at_end=True,
-    metric_for_best_model="f1_score",
-    report_to="none" # Désactive le reporting vers WandB, MLflow, etc.
-)
+        output_dir=output_dir,
+        eval_strategy="epoch",
+        save_strategy="epoch",  # Ajoutez cette ligne !
+        learning_rate=2e-5,
+        per_device_train_batch_size=8,
+        per_device_eval_batch_size=8,
+        num_train_epochs=3,
+        weight_decay=0.01,
+        save_total_limit=1,
+        load_best_model_at_end=True,
+        metric_for_best_model="f1_score",
+        report_to="none"
+    )
 
 trainer = Trainer(
     model=model,
