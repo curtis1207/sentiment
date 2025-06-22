@@ -102,6 +102,6 @@ jobs:
           Deployment Status: ${{ env.DEPLOYMENT_STATUS }}
 
           Check the full logs here: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        to: ${{ github.actor }} # Envoie au commiteur (ou votre email personnel)
+        to: ${{ secrets.SMTP_USER }} # Utilisez directement votre email du secret SMTP_USER
         # cc: votre_email_admin@example.com # Optionnel: pour notifier un administrateur
         from: GitHub Actions <no-reply@github.com> # L'expéditeur
