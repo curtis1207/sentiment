@@ -41,10 +41,9 @@ jobs:
 
     - name: Train Model
       run: python scripts/train.py
-      env:
-        # Passe les variables d'environnement nécessaires au script train.py si besoin
-        # Pour l'instant, train.py n'en a pas besoin, mais c'est un exemple.
-        # CUDA_VISIBLE_DEVICES: "0" # Exemple pour spécifier un GPU si disponible
+      # L'ancien bloc 'env:' vide a été supprimé ici
+      # Si vous deviez passer des variables d'environnement à train.py à l'avenir,
+      # vous ajouteriez un bloc 'env:' ici avec les variables et leur valeur.
 
     - name: Evaluate Model
       id: evaluate # Donne un ID à cette étape pour récupérer ses sorties
