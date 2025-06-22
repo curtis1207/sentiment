@@ -6,6 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
+# Trained models
+models/
+
+# Generated files
+evaluation_results.json
+deployment_status.json
+
 # Distribution / packaging
 .Python
 build/
